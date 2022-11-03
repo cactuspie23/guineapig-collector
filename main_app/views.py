@@ -25,4 +25,4 @@ def about(request):
   return render(request, 'about.html')
 
 def guineapigs_index(request):
-  return render(request, 'guineapig/index.html', { 'guineapigs': guineapigs })
+  return render(request, 'guineapigs/index.html', { 'guineapigs': guineapigs })
