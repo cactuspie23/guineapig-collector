@@ -8,7 +8,11 @@
 {% block content %}
 
 <div class="page-header">
-  <h1>Add a Guinea Pig</h1>
+  {% if guineapig %}
+    <h1>Edit {{ guineapig.name }}</h1>
+  {% else %}
+    <h1>Add a Guinea Pig</h1>
+  {% endif %}
   <img src="{% static 'images/sheltie.png' %}" alt="A long-haired guinea"/>
 </div>
 <form action="" method="post" class="form-container">

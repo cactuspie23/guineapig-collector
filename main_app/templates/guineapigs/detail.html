@@ -26,6 +26,10 @@
       <h2>A {{ guineapig.breed }} pup.</h2>
     {% endif %}
     <p>{{ guineapig.description }}</p>
+    <div class="guineapig-actions">
+      <a href="{% url 'guineapig_update' guineapig.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'guineapig_delete' guineapig.id %}" class="btn danger">Delete</a>
+    </div>
   </div>
 </section>
 

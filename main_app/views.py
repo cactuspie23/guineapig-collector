@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Guineapig
 
 # Create your views here.
@@ -19,3 +20,11 @@ def guineapigs_detail(request, guineapig_id):
 class GuineapigCreate(CreateView):
   model = Guineapig
   fields = '__all__'
+
+class GuineapigUpdate(UpdateView):
+  model = Guineapig
+  fields = ['breed', 'description', 'age']
+  
+class GuineapigDelete(DeleteView):
+  model = Guineapig
+  success_url = '/guineapigs/'
