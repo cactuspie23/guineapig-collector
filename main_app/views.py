@@ -15,3 +15,7 @@ def guineapigs_index(request):
 def guineapigs_detail(request, guineapig_id):
   guineapig = Guineapig.objects.get(id=guineapig_id)
   return render(request, 'guineapigs/detail.html', { 'guineapig': guineapig })
+
+class GuineapigCreate(CreateView):
+  model = Guineapig
+  fields = '__all__'
