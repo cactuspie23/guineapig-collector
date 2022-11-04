@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/guineapigs/guineapig-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="guineapig-container">
+  <div class="guineapig-img">
+    <img 
+      src="{% static 'images/abyssinian.png' %}" 
+      alt="A fluffy guinea"
+    >
+  </div>
+  <div class="guineapig-details">
+    <h1>{{ guineapig.name }}</h1>
+    {% if guineapig.age > 0 %}
+      <h2>A {{ guineapig.age }} year old {{ guineapig.breed }}</h2>
+    {% else %}
+      <h2>A {{ guineapig.breed }} pup.</h2>
+    {% endif %}
+    <p>{{ guineapig.description }}</p>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,20 +1,5 @@
 from django.shortcuts import render
-
-
-class Guineapig: 
-  def __init__(self, name, breed, description, age):
-    self.name = name
-    self.breed = breed
-    self.description = description
-    self.age = age
-
-guineapigs = [
-  Guineapig('Teddy', 'teddy', 'Likes a good bell pepper.', 2),
-  Guineapig('Snuggles', 'abyssinian', 'Loves to be brushed.', 1),
-  Guineapig('Frodo', 'american', 'Squeaks when you open the fridge.', 4),
-  Guineapig('Beelzebub', 'sheltie', 'Will bite you.', 3),
-  Guineapig('Ross', 'peruvian', 'Scared of all noises.', 2),
-]
+from .models import Guineapig
 
 # Create your views here.
 def home(request):
@@ -24,4 +9,9 @@ def about(request):
   return render(request, 'about.html')
 
 def guineapigs_index(request):
+  guineapigs = Guineapig.objects.all()
   return render(request, 'guineapigs/index.html', { 'guineapigs': guineapigs })
+
+def guineapigs_detail(request, guineapig_id):
+  guineapig = Guineapig.objects.get(id=guineapig_id)
+  return render(request, 'guineapigs/detail.html', { 'guineapig': guineapig })
