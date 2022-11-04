@@ -10,11 +10,11 @@ class Guineapig:
     self.age = age
 
 guineapigs = [
-  Guineapig('Teddy', 'teddy', 'Likes lettuce.', 2),
+  Guineapig('Teddy', 'teddy', 'Likes a good bell pepper.', 2),
   Guineapig('Snuggles', 'abyssinian', 'Loves to be brushed.', 1),
-  Guineapig('Frodo', 'american', 'Fuzzy.', 4),
+  Guineapig('Frodo', 'american', 'Squeaks when you open the fridge.', 4),
   Guineapig('Beelzebub', 'sheltie', 'Will bite you.', 3),
-  Guineapig('Ross', 'skinny', 'Scared of noises.', 2),
+  Guineapig('Ross', 'peruvian', 'Scared of all noises.', 2),
 ]
 
 # Create your views here.
