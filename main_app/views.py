@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 class Guineapig: 
@@ -19,7 +18,7 @@ guineapigs = [
 
 # Create your views here.
 def home(request):
-  return HttpResponse('<h1>Herro!</h1>')
+  return render(request, 'home.html')
 
 def about(request):
   return render(request, 'about.html')
