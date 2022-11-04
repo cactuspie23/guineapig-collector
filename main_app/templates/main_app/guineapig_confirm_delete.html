@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1>Delete Guinea Pig?</h1>
+  <img src="{% static 'images/american.png' %}" alt="An american guinea"/>
+</div>
+<h2>Are you sure you want to delete {{ guineapig.name }}?</h2>
+
+<form action="" method="POST" class="form">
+  {% csrf_token %}
+  <a 
+    href="{% url 'guineapigs_detail' guineapig.id %}" 
+    class="btn secondary"
+  >
+    Cancel
+  </a>
+  <button type="submit" class="btn danger">Yes - Delete!</button>
+</form>
+
+{% endblock %}
