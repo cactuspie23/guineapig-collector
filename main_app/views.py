@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Guineapig
+from .forms import FeedingForm
 
 # Create your views here.
 def home(request):
@@ -15,7 +16,8 @@ def guineapigs_index(request):
 
 def guineapigs_detail(request, guineapig_id):
   guineapig = Guineapig.objects.get(id=guineapig_id)
-  return render(request, 'guineapigs/detail.html', { 'guineapig': guineapig })
+  feeding_form = FeedingForm()
+  return render(request, 'guineapigs/detail.html', { 'guineapig': guineapig, 'feeding_form': feeding_form })
 
 class GuineapigCreate(CreateView):
   model = Guineapig
