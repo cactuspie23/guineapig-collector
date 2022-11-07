@@ -2,9 +2,12 @@ from django.db import models
 from django.urls import reverse
 
 MEALS = (
-  ('B', 'Breakfast'),
-  ('L', 'Lunch'),
-  ('D', 'Dinner')
+  ('H', 'Hay'),
+  ('P', 'Pellets'),
+  ('L', 'Lettuce'),
+  ('B', 'Bell Pepper'),
+  ('A', 'Apples'),
+  ('O', 'Oranges'),
 )
 
 class Guineapig(models.Model):
