@@ -23,7 +23,7 @@ class Guineapig(models.Model):
     return reverse('guineapigs_detail', kwargs={'guineapig_id': self.id})
 
 class Feeding(models.Model):
-  date = models.DateField()
+  date = models.DateField('Feeding Date')
   meal = models.CharField(
     max_length=1,
     choices=MEALS,
