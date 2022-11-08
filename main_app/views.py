@@ -17,8 +17,9 @@ def guineapigs_index(request):
 
 def guineapigs_detail(request, guineapig_id):
   guineapig = Guineapig.objects.get(id=guineapig_id)
+  accessories_guineapig_doesnt_have = Accessory.objects.exclude(id__in = guineapig.accessories.all().values_list('id'))
   feeding_form = FeedingForm()
-  return render(request, 'guineapigs/detail.html', { 'guineapig': guineapig, 'feeding_form': feeding_form })
+  return render(request, 'guineapigs/detail.html', { 'guineapig': guineapig, 'feeding_form': feeding_form, 'accessories': accessories_guineapig_doesnt_have })
 
 def add_feeding(request, guineapig_id):
   form = FeedingForm(request.POST)
