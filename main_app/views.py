@@ -30,7 +30,7 @@ def add_feeding(request, guineapig_id):
 
 class GuineapigCreate(CreateView):
   model = Guineapig
-  fields = '__all__'
+  fields = ['name', 'breed', 'description', 'age']
 
 class GuineapigUpdate(UpdateView):
   model = Guineapig
