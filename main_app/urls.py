@@ -11,4 +11,6 @@ urlpatterns = [
   path('guineapigs/<int:pk>/delete/', views.GuineapigDelete.as_view(), name='guineapig_delete'),
   path('guineapigs/<int:guineapig_id>/add_feeding/', views.add_feeding, name='add_feeding'),
   path('accessories/create/', views.AccessoryCreate.as_view(), name='accessories_create'),
+  path('accessories/<int:pk>/', views.AccessoryDetail.as_view(), name='accessories_detail'),
+  path('accessories/', views.AccessoryList.as_view(), name='accessories_index'),
 ]

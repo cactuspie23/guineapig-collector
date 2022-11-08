@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Guineapig, Accessory
 from .forms import FeedingForm
@@ -42,3 +43,9 @@ class GuineapigDelete(DeleteView):
 class AccessoryCreate(CreateView):
   model = Accessory
   fields = '__all__'
+
+class AccessoryList(ListView):
+  model = Accessory
+
+class AccessoryDetail(DetailView):
+  model = Accessory
