@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Guineapig
+from .models import Guineapig, Accessory
 from .forms import FeedingForm
 
 # Create your views here.
@@ -38,3 +38,7 @@ class GuineapigUpdate(UpdateView):
 class GuineapigDelete(DeleteView):
   model = Guineapig
   success_url = '/guineapigs/'
+
+class AccessoryCreate(CreateView):
+  model = Accessory
+  fields = '__all__'

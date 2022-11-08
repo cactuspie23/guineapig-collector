@@ -10,4 +10,5 @@ urlpatterns = [
   path('guineapigs/<int:pk>/update/', views.GuineapigUpdate.as_view(), name='guineapig_update'),
   path('guineapigs/<int:pk>/delete/', views.GuineapigDelete.as_view(), name='guineapig_delete'),
   path('guineapigs/<int:guineapig_id>/add_feeding/', views.add_feeding, name='add_feeding'),
+  path('accessories/create/', views.AccessoryCreate.as_view(), name='accessories_create'),
 ]
