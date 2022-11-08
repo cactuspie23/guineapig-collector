@@ -25,7 +25,7 @@
   <div class="guineapig-img">
     <img 
       src="{% static 'images/'|add:guineapig.breed|add:'.png' %}" 
-      alt="A fluffy guinea"
+      alt="A guinea pig"
     >
   </div>
   <div class="guineapig-details">
@@ -42,7 +42,7 @@
     </div>
   </div>
 </section>
-<div class="feedings-toy-container">
+<div class="feedings-accessory-container">
   <section class="feedings">
     <div class="subsection-title">
       <h2>Feedings</h2>
@@ -91,9 +91,39 @@
       </table>
     {% else %}
       <div class="subsection-content">
-        <p>{{guineapig.name}} has never been fed 😔</p>
+        <p>{{guineapig.name}} has never been fed 😮</p>
       </div>
     {% endif %}
+  </section>
+  <section class="accessories">
+    <div class="subsection-title">
+      <h2>Accessories</h2>
+      <img src="{% static 'images/santa.png' %}" alt="A Santa pig" />
+      <img src="{% static 'images/santa.png' %}" alt="A Santa pig" />
+      <img src="{% static 'images/santa.png' %}" alt="A Santa pig" />
+    </div>
+    <h3>{{ guineapig.name }}'s Accessories</h3>
+    <div class="subsection-content">
+      {% if guineapig.accessories.count %}
+        {% for accessory in guineapig.accessories.all %}
+          <div class="accessory-container">
+            <div 
+              class="color-block"
+              style="background-color: {{ accessory.color }}"
+            ></div>
+            <a href="{% url 'accessories_detail' accessory.id %}">
+              <p>A {{ accessory.color }} {{ accessory.name }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="no-accessories">{{guineapig.name}} doesn't have any accessories 😞</p>
+      {% endif %}
+    </div>
+    <h3>Available Accessories</h3>
+    <div class="subsection-content">
+      
+    </div>
   </section>
 </div>
 
