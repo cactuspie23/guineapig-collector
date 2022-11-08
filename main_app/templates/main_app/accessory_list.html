@@ -1,0 +1,37 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/accessories/accessory-index.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>All Accessories</h1>
+  <img src="{% static 'images/abyssinian.png' %}" alt="An abyssinian pig" />
+  <img src="{% static 'images/broccoli.png' %}" alt="Happy broccoli" />
+  <img src="{% static 'images/american.png' %}" alt="An american pig" />
+  <img src="{% static 'images/carrot.png' %}" alt="Happy carrot" />
+  <img src="{% static 'images/peruvian.png' %}" alt="A peruvian pig" />
+</section>
+
+<section class="card-container">
+  {% for accessory in accessory_list %}
+  <div class="card" style="border-color: {{ accessory.color }}">
+    <div class="card-bg" style="background-color: {{ accessory.color }}"></div>
+    <a href="{% url 'accessories_detail' accessory.id %}">
+      <div class="card-content">
+        <h2>{{ accessory.name }}</h2>
+        <p>A {{ accessory.color }} accessory</p>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
