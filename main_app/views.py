@@ -29,6 +29,10 @@ def add_feeding(request, guineapig_id):
     new_feeding.save()
   return redirect('guineapigs_detail', guineapig_id=guineapig_id)
 
+def assoc_accessory(request, guineapig_id, accessory_id):
+  Guineapig.objects.get(id=guineapig_id).accessories.add(accessory_id)
+  return redirect('guineapigs_detail', guineapig_id=guineapig_id)
+
 class GuineapigCreate(CreateView):
   model = Guineapig
   fields = ['name', 'breed', 'description', 'age']
