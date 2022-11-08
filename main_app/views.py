@@ -38,6 +38,10 @@ class GuineapigCreate(CreateView):
   model = Guineapig
   fields = ['name', 'breed', 'description', 'age']
 
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
+
 class GuineapigUpdate(UpdateView):
   model = Guineapig
   fields = ['breed', 'description', 'age']
