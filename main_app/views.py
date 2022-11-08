@@ -15,7 +15,7 @@ def about(request):
   return render(request, 'about.html')
 
 def guineapigs_index(request):
-  guineapigs = Guineapig.objects.all()
+  guineapigs = Guineapig.objects.filter(user=request.user)
   return render(request, 'guineapigs/index.html', { 'guineapigs': guineapigs })
 
 def guineapigs_detail(request, guineapig_id):
