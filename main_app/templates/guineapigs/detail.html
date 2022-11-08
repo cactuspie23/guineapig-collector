@@ -24,14 +24,14 @@
 <section class="guineapig-container">
   <div class="guineapig-img">
     <img 
-      src="{% static 'images/abyssinian.png' %}" 
+      src="{% static 'images/'|add:guineapig.breed|add:'.png' %}" 
       alt="A fluffy guinea"
     >
   </div>
   <div class="guineapig-details">
     <h1>{{ guineapig.name }}</h1>
     {% if guineapig.age > 0 %}
-      <h2>A {{ guineapig.age }} year old {{ guineapig.breed }}</h2>
+      <h2>A {{ guineapig.age }} year old {{ guineapig.breed }} pig</h2>
     {% else %}
       <h2>A {{ guineapig.breed }} pup.</h2>
     {% endif %}
