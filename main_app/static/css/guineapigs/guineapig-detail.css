@@ -95,6 +95,7 @@
 }
 
 .feedings-accessory-container > section {
+  background: rgba(102, 255, 102, 0.35);
   width: 80%;
   min-width: 360px;
   border: var(--borders);

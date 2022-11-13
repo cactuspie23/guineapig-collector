@@ -24,7 +24,7 @@ body {
   align-items: center;
   background-image: url("../images/grass2.jpg");
   background-size: cover;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 
+  font-family: 'Indie Flower', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
     'Helvetica Neue', sans-serif;
   min-height: 100vh;
@@ -42,9 +42,9 @@ body {
   --card-box-shadow: 5px 5px 6px -1px #AAA;
   --font-xtreme: 4.2rem;
   --font-xxl: 3.6rem;
-  --font-xl: 2.4rem;
+  --font-xl: 2.9rem;
   --font-l: 1.8rem;
-  --font-reg: 1.6rem;
+  --font-reg: 1.9rem;
   --card-border-radius: 6px;
 }
 
@@ -76,8 +76,8 @@ h2 {
 nav a, li {
   text-decoration: none;
   color: var(--text-color);
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 650;
+  font-size: 18px;
 }
 
 nav a:hover {
@@ -93,6 +93,11 @@ nav ul {
 
 nav li {
   padding: 5px 8px;
+}
+
+.username {
+  color: rgb(2, 94, 14);
+  font-size: x-large;
 }
 
 .header-logo-container {

@@ -12,6 +12,9 @@
     href="{% static 'images/guinea-pig.png' %}"
   >
   <title>Guinea Pig Collector</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
   {% block head %}
   {% endblock %}
@@ -37,7 +40,7 @@
           <li><a href="{% url 'guineapigs_create' %}">Add Guinea Pig</a></li>
           <li><a href="{% url 'accessories_create' %}">Add an Accessory</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
-          <li>Welcome, {{ user.username }}</li>
+          <li class="username">Welcome, {{ user.username }}</li>
           <li><a href="{% url 'logout' %}">Log out</a></li>
         {% else %}
           <li><a href="{% url 'about' %}">About</a></li>
