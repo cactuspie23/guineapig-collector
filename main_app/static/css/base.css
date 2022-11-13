@@ -96,9 +96,16 @@ nav li {
 }
 
 .header-logo-container {
+  display: flex;
+  flex-direction: row;
   margin: auto;
   padding: 10px 20px 0;
-  max-width: 500px;
+  max-width: 400px;
+}
+
+.header-logo-container a {
+  text-decoration: none;
+  color: black;
 }
 
 .page-header {
@@ -185,7 +192,7 @@ nav li {
 
   /* visual fix to help align logo */
   .header-logo-container {
-    padding-top: 3px;
+    padding-top: 2px;
   }
 
   nav {
@@ -199,7 +206,7 @@ nav li {
   }
 
   .header-logo-container {
-    width: 213px;
+    width: 513px;
   }
 
   .page-header h1 {
@@ -252,8 +259,9 @@ nav li {
 
   .header-logo-container {
     /* visual fix to help align logo */
+    justify-content: space-around;
     padding-top: 6px;
-    width: 256px;
+    width: 456px;
     height: 65px;
   }
 
